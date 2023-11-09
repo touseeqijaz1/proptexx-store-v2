@@ -34,8 +34,6 @@ const Main = () => {
     setSelectedImage(value);
   };
 
-  console.log(selectedCategory, "selectedCategory");
-
   const modelImages = {
     staging,
     refurnishing,
@@ -49,13 +47,11 @@ const Main = () => {
     if (selectedCategory === "all") {
       return Object.values(modelImages).flat();
     }
-    console.log(selectedCategory, "check");
     return modelImages[selectedCategory] || [];
   };
 
   const imagesToShow = getImagesToShow();
 
-  console.log(imagesToShow, "show image", selectedCategory);
   return (
     <div className="w-[90%] m-[50px_auto_20px_auto] flex flex-col h-[calc(100vh-70px)]">
       <div className="grid md:grid-cols-[1fr_300px] items-end">
@@ -130,7 +126,7 @@ const Main = () => {
           </div>
         </div>
         <div className="flex justify-end items-center px-[10px]">
-          <div className="flex justify-center items-center flex-wrap w-full">
+          <div className="flex justify-end items-center flex-wrap w-full">
             <button className="w-full md:w-[250px] h-[45px] md:h-[55px] font-[600] text-[0.9rem] flex justify-center items-center bg-black text-white rounded-[30px]">
               Upload Your Own Image
             </button>
